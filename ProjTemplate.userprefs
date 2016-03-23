@@ -1,0 +1,24 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/SceneInit/LogOnSceneInit.cs">
+    <Files>
+      <File FileName="Assets/Scripts/UI/WindowUIMgr.cs" Line="50" Column="1" />
+      <File FileName="Assets/Scripts/Core/UISceneBase.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/SceneUICtrl/UISceneLoginOnCtrl.cs" Line="15" Column="1" />
+      <File FileName="Assets/Scripts/UI/SceneUIMgr.cs" Line="42" Column="1" />
+      <File FileName="Assets/Scripts/Common/SceneMgr.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Core/UIBase.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Core/UIWindowBase.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Common/ResourcesMgr.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/SceneInit/LogOnSceneInit.cs" Line="18" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/tzt/Documents/dev/unity/ProjTemplate/Assets/Scripts/UI/WindowUIMgr.cs" line="50" column="1" />
+      <Breakpoint file="/Users/tzt/Documents/dev/unity/ProjTemplate/Assets/Scripts/UI/SceneUICtrl/UISceneLoginOnCtrl.cs" line="15" column="34" />
+      <Breakpoint file="/Users/tzt/Documents/dev/unity/ProjTemplate/Assets/Scripts/UI/SceneUIMgr.cs" line="42" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
