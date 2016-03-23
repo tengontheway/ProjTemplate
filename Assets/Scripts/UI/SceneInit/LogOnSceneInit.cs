@@ -6,14 +6,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class LogOnSceneInit : MonoBehaviour {
-
-	GameObject go;
-
+public class LogOnSceneInit : MonoBehaviour 
+{
 	// Use this for initialization
 	void Awake () 
 	{
-		go = SceneUIMgr.Instance.LoadSceneUI(SceneUIMgr.SceneUIType.LogOn);
+		SceneUIMgr.Instance.LoadSceneUI(SceneUIMgr.SceneUIType.LogOn);
 	}
 
 }

@@ -45,6 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Common\EnumDefine.cs" />
+     <Compile Include="Assets\Scripts\Common\GlobalInit.cs" />
      <Compile Include="Assets\Scripts\Common\ResourcesMgr.cs" />
      <Compile Include="Assets\Scripts\Common\SceneMgr.cs" />
      <Compile Include="Assets\Scripts\Core\Singleton.cs" />

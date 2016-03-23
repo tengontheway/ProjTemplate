@@ -26,6 +26,11 @@ public class UIBase : MonoBehaviour
 		OnStart();
 	}
 
+	void OnDestroy()
+	{
+		BeforeOnDestroy();
+	}
+
 	private void BtnClick(GameObject go)
 	{
 		OnBtnClick(go);

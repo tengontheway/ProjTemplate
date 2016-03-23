@@ -6,15 +6,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class UIRegCtrl : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+public class UIRegCtrl : UIWindowBase
+{
+	private void OnBtnClick(GameObject go)
+	{
+		switch(go.name)
+		{
+		}
 	}
 }

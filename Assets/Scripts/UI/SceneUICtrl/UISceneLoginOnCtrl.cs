@@ -10,6 +10,19 @@ public class UISceneLoginOnCtrl : UISceneBase
 {
 	protected override void OnStart()
 	{
-		WindowUIMgr.Instance.LoadWindow(WindowUIMgr.WindowUIType.LogOn);
+		base.OnStart();
+	}
+
+	void Update()
+	{
+		if (Input.GetKeyUp(KeyCode.O)) 
+		{
+			WindowUIMgr.Instance.OpenWindow(WindowUIType.LogOn);	
+		}
+
+		if (Input.GetKeyUp(KeyCode.P)) 
+		{
+			WindowUIMgr.Instance.CloseWindow(WindowUIType.LogOn);	
+		}
 	}
 }
