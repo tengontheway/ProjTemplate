@@ -42,6 +42,8 @@ public class SceneUIMgr : Singleton<SceneUIMgr>
 			CurrentUIScene = obj.GetComponent<UISceneLoginOnCtrl>();
 			break;
 		case SceneUIType.Loading:
+			obj = ResourcesMgr.Instance.Load(ResourcesMgr.ResourceType.UIScene, "UI Root_Loading");
+			CurrentUIScene = obj.GetComponent<UISceneLoadingCtrl>();
 			break;
 		case SceneUIType.Game:
 			break;

@@ -13,6 +13,18 @@ using System.Collections.Generic;
 public class WindowUIMgr : Singleton<WindowUIMgr>
 {
 	private Dictionary<WindowUIType, UIWindowBase> dicWindows = new Dictionary<WindowUIType, UIWindowBase>();
+
+	/// <summary>
+	/// 已经打开的窗口数量
+	/// </summary>
+	/// <value>The open window count.</value>
+	public int OpenWindowCount
+	{
+		get
+		{
+			return dicWindows.Count;
+		}
+	}
 	
 	#region Window 打开窗口/关闭窗口
 	/// <summary>
@@ -22,23 +34,37 @@ public class WindowUIMgr : Singleton<WindowUIMgr>
 	/// <param name="type">窗口类型</param>
 	public GameObject OpenWindow(WindowUIType type)
 	{
-		if (dicWindows.ContainsKey(type)) return null;
-		
 		GameObject obj = null;
 
-		// 窗口名字必须与窗口类型保持一致
-		obj = ResourcesMgr.Instance.Load(ResourcesMgr.ResourceType.UIWindow, string.Format("pan{0}", type.ToString()), cache:true);;
+		if (!dicWindows.ContainsKey(type)) {
+			// 窗口名字必须与窗口类型保持一致
+			string windowName = string.Format("pan{0}", type.ToString());
+			obj = ResourcesMgr.Instance.Load(ResourcesMgr.ResourceType.UIWindow, windowName, cache:true);;
+			if (obj == null) 
+			{
+				Debug.Log(string.Format("Resources load {0} failed", windowName));
+				return null;
+			}
 
-		obj.transform.parent = SceneUIMgr.Instance.CurrentUIScene.ContainerCenter;
-		obj.transform.localPosition = Vector3.zero;
-		obj.transform.localScale = Vector3.one;
-		NGUITools.SetActive(obj, false);
+			obj.transform.parent = SceneUIMgr.Instance.CurrentUIScene.ContainerCenter;
+			obj.transform.localPosition = Vector3.zero;
+			obj.transform.localScale = Vector3.one;
+			NGUITools.SetActive(obj, false);
 
-		UIWindowBase windowBase = obj.GetComponent<UIWindowBase>();
-		windowBase.currentUIType = type;
-		dicWindows.Add(type, windowBase);
+			UIWindowBase windowBase = obj.GetComponent<UIWindowBase>();
+			if (windowBase == null) return null;
 
-		StartShowWindow(windowBase, true);
+			windowBase.currentUIType = type;
+			dicWindows.Add(type, windowBase);
+
+			StartShowWindow(windowBase, true);
+		} else {
+			obj = dicWindows[type].gameObject;
+		}
+
+		// 动态调整最上层的界面的层级
+		LayerUIMgr.Instance.SetLayer(obj);
+
 		return obj;
 	}
 
@@ -92,8 +118,8 @@ public class WindowUIMgr : Singleton<WindowUIMgr>
 	/// <param name="go">Go.</param>
 	private void DestroyWindow(UIWindowBase window)
 	{
-		GameObject.Destroy(window.gameObject);
 		dicWindows.Remove(window.currentUIType);
+		GameObject.Destroy(window.gameObject);
 	}
 
 	#region 打开窗口的效果

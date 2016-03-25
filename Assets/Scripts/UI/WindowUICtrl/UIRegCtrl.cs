@@ -8,10 +8,26 @@ using System.Collections;
 
 public class UIRegCtrl : UIWindowBase
 {
-	private void OnBtnClick(GameObject go)
+	protected  override void OnBtnClick(GameObject go)
 	{
 		switch(go.name)
 		{
+		case "btnClose":
+			BtnToLogOn();
+			break;
+		case "btnOK":
+			BtnToLogOn();
+			break;
 		}
 	}
+
+	void BtnToLogOn()
+	{
+//		Close();
+//
+//		targetWindow = WindowUIType.LogOn;
+
+		WindowUIMgr.Instance.OpenWindow(WindowUIType.LogOn);
+	}
+
 }

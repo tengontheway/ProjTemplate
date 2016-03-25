@@ -4,11 +4,22 @@
     Desc:       所有的枚举
 */
 
+
+/// <summary>
+/// 场景类型 
+/// </summary>
+public enum SceneType
+{
+	LogOn,
+	Game
+}
+
 /// <summary>
 /// 窗口的类型
 /// </summary>
 public enum WindowUIType
 {
+	None,
 	Reg,			// 注册
 	LogOn,			// 登录
 }

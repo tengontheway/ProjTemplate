@@ -1,20 +1,33 @@
 /*
-    Desc:       你眼瞎啊
+    Desc:       管理所有场景
     Author:     Evil.T
     CreateDate:	2016-03-22 17:46:20
 */
 using UnityEngine;
 using System.Collections;
 
-public class SceneMgr : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
+public class SceneMgr : Singleton<SceneMgr> 
+{
+	/// <summary>
+	/// 仓前场景类型
+	/// </summary>
+	/// <value>The type of the current scene.</value>
+	public SceneType CurrentSceneType
+	{
+		get;
+		private set;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public void LoadLogOn()
+	{
+		CurrentSceneType = SceneType.LogOn;
+
+		Application.LoadLevel("Scene_Loading");
+	}
+
+	public void LoadGame()
+	{
+		CurrentSceneType = SceneType.Game;
+		Application.LoadLevel("Scene_Loading");
 	}
 }

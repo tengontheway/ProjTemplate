@@ -8,8 +8,7 @@ using System.Collections;
 
 public class UILogOnCtrl : UIWindowBase
 {
-
-	private void OnBtnClick(GameObject go)
+	protected override void OnBtnClick(GameObject go)
 	{
 		switch(go.name)
 		{
@@ -24,17 +23,14 @@ public class UILogOnCtrl : UIWindowBase
 		
 	void BtnToReg()
 	{
-		
-		WindowUIMgr.Instance.CloseWindow(WindowUIType.LogOn);
-
+//		targetWindow = WindowUIType.Reg;
+//
+//		Close();
 		WindowUIMgr.Instance.OpenWindow(WindowUIType.Reg);
 	}
 
 	void BtnToLogOn()
 	{
-		
+		SceneMgr.Instance.LoadGame()	;
 	}
-
-
-
 }
