@@ -6,7 +6,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class UISceneLoadingCtrl : UISceneBase 
+public class UIRootLoadingCtrl : UIRootBase 
 {
 	
 }

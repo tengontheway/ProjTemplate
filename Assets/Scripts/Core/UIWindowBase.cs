@@ -39,14 +39,14 @@ public class UIWindowBase : UIBase
 
 	protected virtual void Close()
 	{
-		WindowUIMgr.Instance.CloseWindow(currentUIType);
+		UIWindowMgr.Instance.CloseWindow(currentUIType);
 	}
 
 	protected override void BeforeOnDestroy()
 	{
-		LayerUIMgr.Instance.CheckOpenWindow();
+		UILayerMgr.Instance.CheckOpenWindow();
 
 		if (targetWindow == WindowUIType.None) return;
-		WindowUIMgr.Instance.OpenWindow(targetWindow);
+		UIWindowMgr.Instance.OpenWindow(targetWindow);
 	}
 }

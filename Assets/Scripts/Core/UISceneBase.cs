@@ -6,7 +6,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class UISceneBase: UIBase
+public class UIRootBase: UIBase
 {
 	/// <summary>
 	/// 挂载点

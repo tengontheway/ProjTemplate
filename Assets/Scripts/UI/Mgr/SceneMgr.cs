@@ -1,7 +1,7 @@
 /*
-    Desc:       管理所有场景
     Author:     Evil.T
     CreateDate:	2016-03-22 17:46:20
+    Desc:       管理所有场景
 */
 using UnityEngine;
 using System.Collections;
@@ -18,6 +18,9 @@ public class SceneMgr : Singleton<SceneMgr>
 		private set;
 	}
 
+	/// <summary>
+	/// 记载登录场景
+	/// </summary>
 	public void LoadLogOn()
 	{
 		CurrentSceneType = SceneType.LogOn;
@@ -28,6 +31,7 @@ public class SceneMgr : Singleton<SceneMgr>
 	public void LoadGame()
 	{
 		CurrentSceneType = SceneType.Game;
+
 		Application.LoadLevel("Scene_Loading");
 	}
 }

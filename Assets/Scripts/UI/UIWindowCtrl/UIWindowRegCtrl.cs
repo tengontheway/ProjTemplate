@@ -6,7 +6,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class UIRegCtrl : UIWindowBase
+public class UIWindowRegCtrl : UIWindowBase
 {
 	protected  override void OnBtnClick(GameObject go)
 	{
@@ -27,7 +27,7 @@ public class UIRegCtrl : UIWindowBase
 //
 //		targetWindow = WindowUIType.LogOn;
 
-		WindowUIMgr.Instance.OpenWindow(WindowUIType.LogOn);
+		UIWindowMgr.Instance.OpenWindow(WindowUIType.LogOn);
 	}
 
 }

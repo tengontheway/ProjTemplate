@@ -9,43 +9,37 @@ using System.Collections;
 /// <summary>
 ///  场景UI管理器
 /// </summary>
-public class SceneUIMgr : Singleton<SceneUIMgr>
+public class UIRootMgr : Singleton<UIRootMgr>
 {
-
-	public enum SceneUIType
-	{
-		LogOn,			// 登录
-		Loading,		// 过场
-		Game			// 游戏内的
-	}
-
 	/// <summary>
 	/// 当前场景UI
 	/// </summary>
-	public UISceneBase CurrentUIScene;
+	public UIRootBase CurrentUIScene;
 
 
-	#region LoadSceneUI 加载场景UI
+	#region LoadUIRoot 加载场景UI
 	/// <summary>
 	/// 加载场景UI
 	/// </summary>
 	/// <returns>The scene U.</returns>
 	/// <param name="type">Type.</param>
-	public GameObject LoadSceneUI(SceneUIType type)
+	public GameObject LoadUIRoot(UIRootType type)
 	{
 		GameObject obj = null;
 
 		switch(type)
 		{
-		case SceneUIType.LogOn:
+		case UIRootType.LogOn:
 			obj = ResourcesMgr.Instance.Load(ResourcesMgr.ResourceType.UIScene, "UI Root_LogOnScene");
-			CurrentUIScene = obj.GetComponent<UISceneLoginOnCtrl>();
+			CurrentUIScene = obj.GetComponent<UIRootLoginOnCtrl>();
 			break;
-		case SceneUIType.Loading:
+		case UIRootType.Loading:
 			obj = ResourcesMgr.Instance.Load(ResourcesMgr.ResourceType.UIScene, "UI Root_Loading");
-			CurrentUIScene = obj.GetComponent<UISceneLoadingCtrl>();
+			CurrentUIScene = obj.GetComponent<UIRootLoadingCtrl>();
 			break;
-		case SceneUIType.Game:
+		case UIRootType.Game:
+			obj = ResourcesMgr.Instance.Load(ResourcesMgr.ResourceType.UIScene, "UI Root_Game");
+			CurrentUIScene = obj.GetComponent<UIRootGameCtrl>();
 			break;
 		default:
 			break;

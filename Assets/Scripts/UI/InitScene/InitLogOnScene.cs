@@ -6,12 +6,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class LogOnSceneInit : MonoBehaviour 
+public class InitLogOnScene : MonoBehaviour 
 {
 	// Use this for initialization
 	void Awake () 
 	{
-		SceneUIMgr.Instance.LoadSceneUI(SceneUIMgr.SceneUIType.LogOn);
+		UIRootMgr.Instance.LoadUIRoot(UIRootType.LogOn);
 	}
 
 }

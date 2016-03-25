@@ -15,6 +15,16 @@ public enum SceneType
 }
 
 /// <summary>
+/// UIRoot的类型
+/// </summary>
+public enum UIRootType
+{
+	LogOn,			// 登录
+	Loading,		// 过场
+	Game			// 游戏内的
+}
+
+/// <summary>
 /// 窗口的类型
 /// </summary>
 public enum WindowUIType

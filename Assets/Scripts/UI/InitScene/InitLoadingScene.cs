@@ -6,7 +6,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class LoadingSceneCtrl : MonoBehaviour {
+public class InitLoadingScene : MonoBehaviour {
 
 	private AsyncOperation asyncOP;
 	private bool isDelayed = false;
@@ -18,7 +18,7 @@ public class LoadingSceneCtrl : MonoBehaviour {
 
 	void Start()
 	{
-		LayerUIMgr.Instance.Reset();
+		UILayerMgr.Instance.Reset();
 
 		Invoke("DelayInvoke", 2.0f);
 

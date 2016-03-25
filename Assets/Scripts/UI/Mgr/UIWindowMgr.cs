@@ -10,7 +10,7 @@ using System.Collections.Generic;
 /// <summary>
 /// 场景管理器
 /// </summary>
-public class WindowUIMgr : Singleton<WindowUIMgr>
+public class UIWindowMgr : Singleton<UIWindowMgr>
 {
 	private Dictionary<WindowUIType, UIWindowBase> dicWindows = new Dictionary<WindowUIType, UIWindowBase>();
 
@@ -46,7 +46,7 @@ public class WindowUIMgr : Singleton<WindowUIMgr>
 				return null;
 			}
 
-			obj.transform.parent = SceneUIMgr.Instance.CurrentUIScene.ContainerCenter;
+			obj.transform.parent = UIRootMgr.Instance.CurrentUIScene.ContainerCenter;
 			obj.transform.localPosition = Vector3.zero;
 			obj.transform.localScale = Vector3.one;
 			NGUITools.SetActive(obj, false);
@@ -63,7 +63,7 @@ public class WindowUIMgr : Singleton<WindowUIMgr>
 		}
 
 		// 动态调整最上层的界面的层级
-		LayerUIMgr.Instance.SetLayer(obj);
+		UILayerMgr.Instance.AdjustLayer(obj);
 
 		return obj;
 	}
